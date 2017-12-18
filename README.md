@@ -52,6 +52,8 @@ TWINFIELD_ORGANISATION=your_organisation
 TWINFIELD_OFFICE=your_office
 ```
 
+If you wish to use the `autoRedirect` option of the PhpTwinfield API client, you can enable it in the `config/twinfield.php` file by setting `'autoRedirect' => true,`.
+
 ## Usage
 
 You can use the `Twinfield` facade to get an API connector:
