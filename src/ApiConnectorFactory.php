@@ -4,7 +4,7 @@ namespace Willemo\LaravelTwinfield;
 
 use PhpTwinfield\ApiConnectors\BaseApiConnector;
 use PhpTwinfield\Secure\Config;
-use PhpTwinfield\Secure\Login;
+use PhpTwinfield\Secure\Connection;
 use Symfony\Component\OptionsResolver\Exception\InvalidOptionsException;
 use Symfony\Component\OptionsResolver\Options;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -50,7 +50,7 @@ class ApiConnectorFactory implements ApiConnectorFactoryInterface
         }
 
         /** @var BaseApiConnector $apiConnector */
-        $apiConnector = new $className($this->getLogin());
+        $apiConnector = new $className($this->getConnection());
 
         if (!$apiConnector instanceof BaseApiConnector) {
             throw new InvalidApiConnectorNameException(sprintf(
@@ -63,13 +63,13 @@ class ApiConnectorFactory implements ApiConnectorFactoryInterface
     }
 
     /**
-     * Get the Twinfield login.
+     * Get the Twinfield Connection.
      *
-     * @return Login
+     * @return Connection
      */
-    protected function getLogin(): Login
+    protected function getConnection(): Connection
     {
-        return new Login($this->getConfig());
+        return new Connection($this->getConfig());
     }
 
     /**
