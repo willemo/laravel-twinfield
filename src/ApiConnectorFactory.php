@@ -3,8 +3,7 @@
 namespace Willemo\LaravelTwinfield;
 
 use PhpTwinfield\ApiConnectors\BaseApiConnector;
-use PhpTwinfield\Secure\Config;
-use PhpTwinfield\Secure\Connection;
+use PhpTwinfield\Secure\WebservicesAuthentication;
 use Symfony\Component\OptionsResolver\Exception\InvalidOptionsException;
 use Symfony\Component\OptionsResolver\Options;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -50,7 +49,7 @@ class ApiConnectorFactory implements ApiConnectorFactoryInterface
         }
 
         /** @var BaseApiConnector $apiConnector */
-        $apiConnector = new $className($this->getConnection());
+        $apiConnector = new $className($this->getWebservicesAuthentication());
 
         if (!$apiConnector instanceof BaseApiConnector) {
             throw new InvalidApiConnectorNameException(sprintf(
@@ -63,43 +62,13 @@ class ApiConnectorFactory implements ApiConnectorFactoryInterface
     }
 
     /**
-     * Get the Twinfield Connection.
+     * Get the Twinfield AuthenticatedConnection.
      *
-     * @return Connection
+     * @return AuthenticatedConnection
      */
-    protected function getConnection(): Connection
+    protected function getWebservicesAuthentication (): WebservicesAuthentication 
     {
-        return new Connection($this->getConfig());
-    }
-
-    /**
-     * Get the Twinfield config.
-     *
-     * @return Config
-     */
-    protected function getConfig(): Config
-    {
-        $config = new Config();
-
-        if ($this->config['authType'] === 'oauth') {
-            $config->setOAuthParameters(
-                $this->config['clientId'],
-                $this->config['clientSecret'],
-                $this->config['returnUrl'],
-                $this->config['organisation'],
-                $this->config['office'],
-                $this->config['autoRedirect']
-            );
-        } else {
-            $config->setCredentials(
-                $this->config['username'],
-                $this->config['password'],
-                $this->config['organisation'],
-                $this->config['office']
-            );
-        }
-
-        return $config;
+        return new WebservicesAuthentication (config('twinfield.username'), config('twinfield.password'), config('twinfield.organisation'));
     }
 
     /**
