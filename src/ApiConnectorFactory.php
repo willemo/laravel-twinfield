@@ -62,9 +62,9 @@ class ApiConnectorFactory implements ApiConnectorFactoryInterface
     }
 
     /**
-     * Get the Twinfield AuthenticatedConnection.
+     * Get the Twinfield WebservicesAuthentication.
      *
-     * @return AuthenticatedConnection
+     * @return WebservicesAuthentication
      */
     protected function getWebservicesAuthentication (): WebservicesAuthentication 
     {
