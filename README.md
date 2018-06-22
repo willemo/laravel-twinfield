@@ -13,10 +13,14 @@ It works with the latest `dev-master` code from [`php-twinfield/twinfield`](http
 You can install this package with composer:
 
 ```
-composer require willemo/laravel-twinfield
+composer require 'willemo/laravel-twinfield:^1.0'
 ```
 
 The package will be automatically discovered by your Laravel installation, so you don't need to add the service provider and facade to your app config file.
+
+## Upgrading to version 1
+
+Between version 0.X.X and 1.X.X the file structure has been modified. Make sure all class references are correct after upgrading.
 
 ## Configuration
 
