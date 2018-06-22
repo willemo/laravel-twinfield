@@ -4,7 +4,7 @@ Twinfield service provider for Laravel 5.5+.
 
 ## Requirements
 
-This service provider is written for Laravel 5.5 and up and requires PHP 7.1 to run.
+This service provider is written for Laravel 5.5 and up and requires PHP 7.2 to run.
 
 It works with the latest `dev-master` code from [`php-twinfield/twinfield`](https://github.com/php-twinfield/twinfield), until they release the current code with a stable version number.
 
@@ -13,7 +13,7 @@ It works with the latest `dev-master` code from [`php-twinfield/twinfield`](http
 You can install this package with composer:
 
 ```
-composer require 'willemo/laravel-twinfield:^1.0'
+composer require "willemo/laravel-twinfield:^1.0"
 ```
 
 The package will be automatically discovered by your Laravel installation, so you don't need to add the service provider and facade to your app config file.
