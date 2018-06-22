@@ -9,6 +9,11 @@ use Symfony\Component\OptionsResolver\Options;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Willemo\LaravelTwinfield\Exceptions\InvalidApiConnectorNameException;
 
+/**
+ * Class ApiConnectorFactory
+ *
+ * @package Willemo\LaravelTwinfield\Factories
+ */
 class ApiConnectorFactory implements ApiConnectorFactoryInterface
 {
     /**
@@ -33,11 +38,11 @@ class ApiConnectorFactory implements ApiConnectorFactoryInterface
     /**
      * Get an API connector by its name.
      *
-     * @param $name
+     * @param  string $name
      * @return BaseApiConnector
      * @throws InvalidApiConnectorNameException
      */
-    public function get($name): BaseApiConnector
+    public function get(string $name): BaseApiConnector
     {
         $className = $this->buildClassName($name);
 
@@ -78,10 +83,10 @@ class ApiConnectorFactory implements ApiConnectorFactoryInterface
     /**
      * Build a full class name from the given name.
      *
-     * @param $name
+     * @param  string $name
      * @return string
      */
-    protected function buildClassName($name): string
+    protected function buildClassName(string $name): string
     {
         if (class_exists($name)) {
             return $name;

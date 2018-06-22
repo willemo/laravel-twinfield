@@ -7,6 +7,11 @@ use Illuminate\Support\ServiceProvider;
 use Willemo\LaravelTwinfield\Factories\ApiConnectorFactory;
 use Willemo\LaravelTwinfield\Factories\ApiConnectorFactoryInterface;
 
+/**
+ * Class TwinfieldServiceProvider
+ *
+ * @package Willemo\LaravelTwinfield
+ */
 class TwinfieldServiceProvider extends ServiceProvider
 {
     /**
