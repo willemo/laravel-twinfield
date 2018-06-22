@@ -4,13 +4,14 @@ namespace Tests;
 
 use PhpTwinfield\Exception;
 use Willemo\LaravelTwinfield\Exceptions\InvalidApiConnectorNameException;
+use Willemo\LaravelTwinfield\Facades\Twinfield;
 
 /**
  * Class ApiConnectorFactoryTest
  *
  * @package Tests
  *
- * @coversDefaultClass Willemo\LaravelTwinfield\ApiConnectorFactory
+ * @coversDefaultClass \Willemo\LaravelTwinfield\Factories\ApiConnectorFactory
  */
 class ApiConnectorFactoryTest extends TestCase
 {
@@ -22,7 +23,7 @@ class ApiConnectorFactoryTest extends TestCase
         $this->expectException(Exception::class);
         $this->expectExceptionMessage('Failed logging in using the credentials.');
 
-        \Twinfield::get('Customer');
+        Twinfield::get('Customer');
     }
 
     /**
@@ -33,6 +34,6 @@ class ApiConnectorFactoryTest extends TestCase
         $this->expectException(InvalidApiConnectorNameException::class);
         $this->expectExceptionMessage('ApiConnector "FooBar" does not exist.');
 
-        \Twinfield::get('FooBar');
+        Twinfield::get('FooBar');
     }
 }

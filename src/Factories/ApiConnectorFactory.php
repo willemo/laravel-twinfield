@@ -1,6 +1,6 @@
 <?php
 
-namespace Willemo\LaravelTwinfield;
+namespace Willemo\LaravelTwinfield\Factories;
 
 use PhpTwinfield\ApiConnectors\BaseApiConnector;
 use PhpTwinfield\Secure\WebservicesAuthentication;
@@ -66,9 +66,13 @@ class ApiConnectorFactory implements ApiConnectorFactoryInterface
      *
      * @return WebservicesAuthentication
      */
-    protected function getWebservicesAuthentication (): WebservicesAuthentication 
+    protected function getWebservicesAuthentication(): WebservicesAuthentication
     {
-        return new WebservicesAuthentication (config('twinfield.username'), config('twinfield.password'), config('twinfield.organisation'));
+        return new WebservicesAuthentication(
+            config('twinfield.username'),
+            config('twinfield.password'),
+            config('twinfield.organisation')
+        );
     }
 
     /**

@@ -1,10 +1,11 @@
 <?php
 
-namespace Willemo\LaravelTwinfield;
+namespace Willemo\LaravelTwinfield\Facades;
 
 use Illuminate\Support\Facades\Facade;
+use Willemo\LaravelTwinfield\Factories\ApiConnectorFactoryInterface;
 
-class ApiConnectorFacade extends Facade
+class Twinfield extends Facade
 {
     /**
      * Get the registered name of the component.

@@ -4,6 +4,8 @@ namespace Willemo\LaravelTwinfield;
 
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
+use Willemo\LaravelTwinfield\Factories\ApiConnectorFactory;
+use Willemo\LaravelTwinfield\Factories\ApiConnectorFactoryInterface;
 
 class TwinfieldServiceProvider extends ServiceProvider
 {

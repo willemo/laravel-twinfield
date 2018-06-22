@@ -36,7 +36,7 @@
                 "Willemo\\LaravelTwinfield\\TwinfieldServiceProvider"
             ],
             "aliases": {
-                "Twinfield": "Willemo\\LaravelTwinfield\\ApiConnectorFacade"
+                "Twinfield": "Willemo\\LaravelTwinfield\\Facades\\Twinfield"
             }
         }
     }

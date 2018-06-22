@@ -3,7 +3,7 @@
 namespace Tests;
 
 use Orchestra\Testbench\TestCase as Orchestra;
-use Willemo\LaravelTwinfield\ApiConnectorFacade;
+use Willemo\LaravelTwinfield\Facades\Twinfield;
 use Willemo\LaravelTwinfield\TwinfieldServiceProvider;
 
 abstract class TestCase extends Orchestra
@@ -30,7 +30,7 @@ abstract class TestCase extends Orchestra
     protected function getPackageAliases($app)
     {
         return [
-            'Twinfield' => ApiConnectorFacade::class,
+            'Twinfield' => Twinfield::class,
         ];
     }
 

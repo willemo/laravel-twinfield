@@ -1,6 +1,6 @@
 <?php
 
-namespace Willemo\LaravelTwinfield;
+namespace Willemo\LaravelTwinfield\Factories;
 
 use PhpTwinfield\ApiConnectors\BaseApiConnector;
 use Willemo\LaravelTwinfield\Exceptions\InvalidApiConnectorNameException;
