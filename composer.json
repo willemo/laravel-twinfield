@@ -12,7 +12,7 @@
     "require": {
         "php": ">=7.1.0",
         "illuminate/support": "^5.5",
-        "php-twinfield/twinfield": "dev-master",
+        "php-twinfield/twinfield": "^2.0",
         "symfony/options-resolver": "^4.0"
     },
     "require-dev": {
