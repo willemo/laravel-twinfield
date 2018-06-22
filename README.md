@@ -1,12 +1,10 @@
 # Laravel Twinfield
 
-Twinfield service provider for Laravel 5.5+.
+Twinfield service provider for Laravel 5.5+, adding the functionality of the [`php-twinfield/twinfield`](https://github.com/php-twinfield/twinfield) API client.
 
 ## Requirements
 
 This service provider is written for Laravel 5.5 and up and requires PHP 7.2 to run.
-
-It works with the latest `dev-master` code from [`php-twinfield/twinfield`](https://github.com/php-twinfield/twinfield), until they release the current code with a stable version number.
 
 ## Installation
 
