@@ -2,9 +2,10 @@
 
 namespace Tests;
 
-use PhpTwinfield\Exception;
+use PhpTwinfield\ApiConnectors\CustomerApiConnector;
 use Willemo\LaravelTwinfield\Exceptions\InvalidApiConnectorNameException;
 use Willemo\LaravelTwinfield\Facades\Twinfield;
+use Willemo\LaravelTwinfield\TwinfieldServiceProvider;
 
 /**
  * Class ApiConnectorFactoryTest
@@ -16,24 +17,44 @@ use Willemo\LaravelTwinfield\Facades\Twinfield;
 class ApiConnectorFactoryTest extends TestCase
 {
     /**
+     * @covers ::__construct
      * @covers ::get
+     * @covers ::getWebservicesAuthentication
+     * @covers ::buildClassName
+     * @covers ::configureOptions
+     * @covers ::checkOption
      */
     public function testGet(): void
     {
-        $this->expectException(Exception::class);
-        $this->expectExceptionMessage('Failed logging in using the credentials.');
-
-        Twinfield::get('Customer');
+        $this->assertInstanceOf(
+            CustomerApiConnector::class,
+            Twinfield::get('Customer')
+        );
     }
 
     /**
      * @covers ::get
      */
-    public function testInvalidGet(): void
+    public function testGetWithNotExistingClass(): void
     {
         $this->expectException(InvalidApiConnectorNameException::class);
         $this->expectExceptionMessage('ApiConnector "FooBar" does not exist.');
 
         Twinfield::get('FooBar');
+    }
+
+    /**
+     * @covers ::get
+     * @covers ::buildClassName
+     */
+    public function testGetWithInvalidClass(): void
+    {
+        $this->expectException(InvalidApiConnectorNameException::class);
+        $this->expectExceptionMessage(sprintf(
+            'ApiConnector "%s" is not an instance of BaseApiConnector.',
+            TwinfieldServiceProvider::class
+        ));
+
+        Twinfield::get(TwinfieldServiceProvider::class);
     }
 }
