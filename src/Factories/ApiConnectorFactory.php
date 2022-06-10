@@ -94,7 +94,7 @@ class ApiConnectorFactory implements ApiConnectorFactoryInterface
 
         $className = $name;
 
-        if (!ends_with($className, 'ApiConnector')) {
+        if (!str_ends_with($className, 'ApiConnector')) {
             $className .= 'ApiConnector';
         }
 

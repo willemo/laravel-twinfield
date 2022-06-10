@@ -1,22 +1,26 @@
 # Laravel Twinfield
 
-Twinfield service provider for Laravel 5.5+, adding the functionality of the [`php-twinfield/twinfield`](https://github.com/php-twinfield/twinfield) API client.
+Twinfield service provider for Laravel 8, adding the functionality of the [`php-twinfield/twinfield`](https://github.com/php-twinfield/twinfield) API client.
 
 ## Requirements
 
-This service provider is written for Laravel 5.5 and up and requires PHP 7.2 to run.
+This service provider is written for Laravel 8 and up and requires PHP 8.1 to run.
 
 ## Installation
 
 You can install this package with composer:
 
 ```
-composer require "willemo/laravel-twinfield:^1.0"
+composer require "willemo/laravel-twinfield:^2.0"
 ```
 
 The package will be automatically discovered by your Laravel installation, so you don't need to add the service provider and facade to your app config file.
 
-## Upgrading to version 1
+## Need support for lower PHP or Laravel versions?
+
+In that case you can install the `^1.0` version of this package, which is compatible with Laravel 5.5+ and PHP 7.2+.
+
+## Upgrading from version 0 to version 1
 
 Between version 0.X.X and 1.X.X the file structure has been modified. Make sure all class references are correct after upgrading.
 
