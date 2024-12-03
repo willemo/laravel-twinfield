@@ -2,6 +2,10 @@
 
 Twinfield service provider for Laravel 8, adding the functionality of the [`php-twinfield/twinfield`](https://github.com/php-twinfield/twinfield) API client.
 
+## Warning: this project is archived
+
+This means that there will be no more updates or security fixes from Dependabot.
+
 ## Requirements
 
 This service provider is written for Laravel 8 and up and requires PHP 8.1 to run.
